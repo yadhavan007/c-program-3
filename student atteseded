@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+class Input {
+  String name; 
+  int rollNo;
+  int yearOfStudy;
+  float cgpa;
+
+  void getDetails() {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter Name: ");
+    name = sc.next();
+    System.out.println("Enter Roll No: ");
+    rollNo = sc.nextInt();
+    System.out.println("Enter Year of Study: ");
+    yearOfStudy = sc.nextInt();
+    System.out.println("Enter CGPA: ");
+    cgpa = sc.nextFloat();
+  }
+
+  void display() {
+    System.out.println("Your Name is " + name);
+    System.out.println("Your Roll No is " + rollNo);
+    System.out.println("Your Year of Study is " + yearOfStudy);
+    System.out.println("Your CGPA is " + cgpa);
+  }
+
+  public static void main(String[] args) {
+    Input student = new Input(); // Create an instance of the Input class
+    student.getDetails(); // Call the method to get details
+    student.display(); // Call the method to display details
+  }
+}
