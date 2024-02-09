@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+class Shape {
+    public static void main(String[] args) {
+        int choice;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("RECTANGLE-1\nCIRCLE-2\nTRIANGLE-3");
+        System.out.println("Enter Choice: ");
+        choice= sc.nextInt();
+        switch (choice){
+            case 1:
+                System.out.println("For Rectangle,");
+                System.out.println("Enter Length");
+                int length = sc.nextInt();
+                System.out.println("Enter Breadth");
+                int breadth = sc.nextInt();
+                Rectangle rect = new Rectangle();
+                int rect_res=rect.calculateRect(length,breadth);
+                System.out.println("The Area is,"+rect_res);
+                break;
+            case 2:
+                System.out.println("For Circle,");
+                System.out.println("Enter Radius");
+                int radius = sc.nextInt();
+                Circle cir= new Circle();
+                int cir_res=cir.calculateCir(radius);
+                System.out.println("The Area is,"+cir_res);
+                break;
+            case 3:
+                System.out.println("For Triangle,");
+                System.out.println("Enter Height");
+                int height = sc.nextInt();
+                System.out.println("Enter Breadth");
+                int b = sc.nextInt();
+                Triangle tri = new Triangle();
+                int tri_res=tri.calculateTri(height,b);
+                System.out.println("The Area is,"+tri_res);
+                break;
+            default:
+                break;
+        }
+        sc.close();
+    }
+}
+
+class Rectangle{
+    int calculateRect(int length, int breadth){
+        int area=length*breadth;
+        return area;
+    }
+}
+class Circle{
+    int calculateCir(int radius){
+        float pi=3.14f;
+        int area=(int)pi*radius*radius;
+        return area;
+    }
+}
+class Triangle{
+    int calculateTri(int height, int breadth){
+        
+        int area=(int)(0.5*height*breadth);
+        return area;
+    }
+}
